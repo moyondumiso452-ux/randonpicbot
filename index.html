@@ -45,6 +45,16 @@
       font-weight: bold;
     }
 
+    .tiktok-button:hover {
+      background: #222;
+    }
+
+    .status {
+      margin-top: 20px;
+      color: #16803c;
+      font-weight: bold;
+    }
+
     .links {
       margin-top: 30px;
     }
@@ -65,15 +75,29 @@
       Find pictures and publish content to TikTok.
     </p>
 
-    <a class="tiktok-button" href="#">
+    <a
+      class="tiktok-button"
+      href="https://randompicbot-login.moyondumiso452.workers.dev/login"
+    >
       Log in with TikTok
     </a>
+
+    <div id="status" class="status"></div>
 
     <div class="links">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
     </div>
   </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("tiktok") === "connected") {
+      document.getElementById("status").textContent =
+        "✓ TikTok connected successfully!";
+    }
+  </script>
 
 </body>
 </html>
